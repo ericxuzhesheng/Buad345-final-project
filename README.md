@@ -54,11 +54,11 @@
 
 **punchline（转折点）净值对比**
 
-<p align="center"><img src="figures/fig2_punchline.png" width="760" alt="Punchline figure"></p>
+<p align="center"><img src="figures/dash1_story.png" width="760" alt="Punchline figure"></p>
 
 **机制：时间分段（干线运输主导，非最后一公里）**
 
-<p align="center"><img src="figures/fig3_segments.png" width="760" alt="Segment decomposition"></p>
+<p align="center"><img src="figures/dash2_mechanism.png" width="760" alt="Segment decomposition"></p>
 
 ### 方法
 
@@ -81,7 +81,7 @@
 │   ├── 01_build_analysis_table.R   # 三个 CSV → 订单级分析表（时间/分段/规模）
 │   ├── 02_aggregate_and_export.R   # → tableau_data/*.csv + 打印关键数字
 │   ├── 03_figures.R                # → figures/*.png
-│   └── run_all.R                   # 顺序运行 01→02→03
+│   └── run_all.R                   # 顺序运行 01→04（含仪表盘）
 ├── tableau_data/          # 体积小、可入库的聚合 CSV（Tableau 数据源）
 ├── tableau/               # TABLEAU_BUILD_GUIDE.md：逐看板搭建指南
 ├── figures/               # R 生成的图
@@ -164,7 +164,7 @@ Period `2017-01-01`–`2017-07-31`; hours; `totaltime = SIGNED − pay_timestamp
 | Small city | Large | 61.7 | 72.2 | **+10.5** | 857,583 |
 | Small city | Small | 67.1 | 75.2 | **+8.0** | 311,798 |
 
-<p align="center"><img src="figures/fig2_punchline.png" width="760" alt="Punchline figure"></p>
+<p align="center"><img src="figures/dash1_story.png" width="760" alt="Punchline figure"></p>
 
 ### Method
 

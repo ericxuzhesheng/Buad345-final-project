@@ -5,4 +5,5 @@
 source("R/01_build_analysis_table.R")
 source("R/02_aggregate_and_export.R")
 source("R/03_figures.R")
+source("R/04_dashboards.R")
 message("\nPipeline complete.")
