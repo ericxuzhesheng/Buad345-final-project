@@ -1,0 +1,9 @@
+Citysize,LCsize,cainiao,n_orders,avg_totaltime,avg_review
+BigCity,Large,Cainiao,23497,44.72,4.776
+BigCity,Large,Non-Cainiao,72804,54.18,4.819
+BigCity,Small,Cainiao,5720,52.41,4.764
+BigCity,Small,Non-Cainiao,17036,49.08,4.86
+SmallCity,Large,Cainiao,263908,61.72,4.789
+SmallCity,Large,Non-Cainiao,593675,72.22,4.818
+SmallCity,Small,Cainiao,95019,67.12,4.814
+SmallCity,Small,Non-Cainiao,216779,75.16,4.797

@@ -1,0 +1,9 @@
+Citysize,LCsize,cainiao,avg_review,n_reviews
+BigCity,Large,Cainiao,4.776,7390
+BigCity,Large,Non-Cainiao,4.819,24575
+BigCity,Small,Cainiao,4.764,2144
+BigCity,Small,Non-Cainiao,4.86,5506
+SmallCity,Large,Cainiao,4.789,94012
+SmallCity,Large,Non-Cainiao,4.818,223856
+SmallCity,Small,Cainiao,4.814,41319
+SmallCity,Small,Non-Cainiao,4.797,79466
