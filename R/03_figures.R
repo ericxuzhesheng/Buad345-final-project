@@ -29,32 +29,8 @@ p1 <- ggplot(a1, aes(cainiao, avg_totaltime, fill = cainiao)) +
   guides(fill = "none")
 ggsave(file.path(fig_dir, "fig1_main_effect.png"), p1, width = 6, height = 4, dpi = 150)
 
-# ---- Fig 2: L3 punchline 2x2x2 ----------------------------------------------
-a3 <- read_agg("agg_cainiao_lcsize_citysize.csv")
-p2 <- ggplot(a3, aes(LCsize, avg_totaltime, fill = cainiao)) +
-  geom_col(position = position_dodge(width = 0.7), width = 0.6) +
-  geom_text(aes(label = sprintf("%.0f", avg_totaltime)),
-            position = position_dodge(width = 0.7), vjust = -0.3, size = 3) +
-  facet_wrap(~ Citysize) +
-  scale_fill_manual(values = c("Cainiao" = accent, "Non-Cainiao" = grey)) +
-  labs(title = "...BUT the advantage shrinks for Big-city destinations on Small carriers",
-       x = NULL, y = "Avg fulfillment time (hours)", fill = NULL) +
-  theme(legend.position = "top")
-ggsave(file.path(fig_dir, "fig2_punchline.png"), p2, width = 8, height = 4.5, dpi = 150)
-
-# ---- Fig 3: time-segment decomposition --------------------------------------
-seg <- read_agg("agg_time_segments.csv")
-seg[, segment := factor(segment, levels = c("pre_delivery", "line_haul", "last_mile"))]
-p3 <- ggplot(seg, aes(cainiao, avg_hours, fill = segment)) +
-  geom_col() +
-  facet_grid(Citysize ~ LCsize) +
-  scale_fill_manual(values = c(pre_delivery = "#CA0020",
-                               line_haul = "#F4A582",
-                               last_mile = "#92C5DE")) +
-  labs(title = "Where the time goes: segment decomposition",
-       x = NULL, y = "Avg hours", fill = "Segment") +
-  theme(axis.text.x = element_text(angle = 20, hjust = 1))
-ggsave(file.path(fig_dir, "fig3_segments.png"), p3, width = 8, height = 5.5, dpi = 150)
+# Note: the standalone punchline (fig2) and segment (fig3) charts were superseded
+# by the composite dashboards in R/04_dashboards.R (dash1_story / dash2_mechanism).
 
 # ---- Fig 4: review score echoes the punchline -------------------------------
 # (Cities-passed does NOT explain the gap -- small carriers pass through *fewer*
