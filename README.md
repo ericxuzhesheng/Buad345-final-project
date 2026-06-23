@@ -13,6 +13,7 @@
   <img src="https://img.shields.io/badge/Tableau-Story-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Tableau">
   <img src="https://img.shields.io/badge/订单-1.29M · Jan–Jul%202017-4CAF50?style=for-the-badge" alt="1.29M orders">
   <img src="https://img.shields.io/badge/Punchline-BigCity×SmallLC · −3.3h-9B51E0?style=for-the-badge" alt="punchline">
+  <img src="https://img.shields.io/badge/License-MIT-2EA043?style=for-the-badge" alt="MIT License">
 </p>
 
 ---
@@ -232,3 +233,16 @@ committed.
 3. Yu, Y., Wang, X., Zhong, R. Y., & Huang, G. Q. (2016). E-commerce logistics in supply chain management: Practice perspective. *Procedia CIRP*, 52, 179–185.
 4. Koç, Ç., Bektaş, T., Jabali, O., & Laporte, G. (2016). Thirty years of heterogeneous vehicle routing. *European Journal of Operational Research*, 249(1), 1–21.
 5. Deutsch, Y., & Golany, B. (2018). A parcel locker network as a solution to the logistics last mile problem. *International Journal of Production Research*, 56(1–2), 251–261.
+
+---
+
+## License / 许可证
+
+Released under the **MIT License** — see [`LICENSE`](LICENSE).
+本仓库以 **MIT 许可证** 开源，详见 [`LICENSE`](LICENSE)。
+
+The license covers only the code, analysis scripts, figures, and documentation in
+this repository. It does **not** cover the underlying Cainiao / Tmall course
+dataset, which is a non-public M&SOM dataset and is intentionally excluded.
+许可证仅覆盖本仓库的代码、分析脚本、图表与文档；**不**覆盖底层的菜鸟 / 天猫课程数据集
+（非公开 M&SOM 数据，已刻意排除、未入库）。
