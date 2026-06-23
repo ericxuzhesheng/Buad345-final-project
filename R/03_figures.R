@@ -72,4 +72,16 @@ p4 <- ggplot(rv, aes(LCsize, avg_review, fill = cainiao)) +
   theme(legend.position = "top")
 ggsave(file.path(fig_dir, "fig4_review.png"), p4, width = 8, height = 4.5, dpi = 150)
 
+# ---- Fig 5: daily trend (descriptive) ---------------------------------------
+dt <- read_agg("agg_daily_trend.csv")
+dt[, day := as.Date(day)]
+p5 <- ggplot(dt, aes(day, avg_totaltime, color = cainiao)) +
+  geom_line(linewidth = 0.4, alpha = 0.55) +
+  geom_smooth(se = FALSE, linewidth = 1, method = "loess", span = 0.3) +
+  scale_color_manual(values = c("Cainiao" = accent, "Non-Cainiao" = grey)) +
+  labs(title = "Cainiao stays faster across the whole period (Jan-Jul 2017)",
+       x = NULL, y = "Avg fulfillment time (hours)", color = NULL) +
+  theme(legend.position = "top")
+ggsave(file.path(fig_dir, "fig5_daily_trend.png"), p5, width = 8, height = 3.8, dpi = 150)
+
 message("Figures written to ", fig_dir, "/")

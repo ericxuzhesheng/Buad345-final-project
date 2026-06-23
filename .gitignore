@@ -21,6 +21,9 @@ data/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.nav
+*.snm
+*.vrb
 
 # OS
 .DS_Store

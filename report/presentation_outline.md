@@ -1,20 +1,20 @@
-# Presentation Outline — Cainiao Fulfillment Story (BUAD 345)
+# Presentation Outline — Cainiao Fulfillment Story (BUAD 345, Group 12)
 
 ~11 slides. One takeaway per slide; each maps to a Tableau sheet from
-`tableau/TABLEAU_BUILD_GUIDE.md`. Audience: **Cainiao**. Replace `XX` with the
-exact numbers printed by `R/02_aggregate_and_export.R`.
+`tableau/TABLEAU_BUILD_GUIDE.md`. Audience: **Cainiao**. A ready-to-present
+LaTeX Beamer version of this is in `report/slides.pdf`.
 
 | # | Slide | One-line takeaway | Visual |
 |---|---|---|---|
 | 1 | Title | "Is Cainiao actually faster — and where isn't it?" | — |
-| 2 | Motivation | Delivery speed drives e-commerce satisfaction; Cainiao runs ~XX% of orders. | Sheet 1 (KPIs) |
+| 2 | Motivation | Delivery speed drives satisfaction; Cainiao runs **30.2%** of orders. | Sheet 1 (KPIs) |
 | 3 | Main idea | Test whether Cainiao makes overall fulfillment faster. | text |
-| 4 | Headline finding | Cainiao orders arrive ~XX h faster on average. | Sheet 2 |
-| 5 | Fair comparison | Holds even after dropping promised-speed orders (`promise=0`). | Sheet 2 / control |
-| 6 | Dig 1: carrier size | The gap is much smaller on small carriers. | Sheet 3 (Cainiao × LCsize) |
-| 7 | Dig 2: + city size (PUNCHLINE) | For **big-city destinations on small carriers**, Cainiao's edge nearly vanishes. | Sheet 3 (2×2 grid, focus cell) |
-| 8 | Mechanism | The extra time is **pickup + line-haul**, not last-mile. | Sheet 4 (segments) |
-| 9 | Why | Small carriers route packages through ~XX more cities (extra consolidation stops). | Sheet 5 |
+| 4 | Headline finding | Cainiao orders arrive **~9.2 h** faster on average (61.9 vs 71.0 h). | Sheet 2 |
+| 5 | Fair comparison | Holds after dropping promised-speed orders (62.5 vs 71.0 h). | Sheet 2 / control |
+| 6 | Dig 1: carrier size | Gap is smaller on small carriers (7 h) than large (10 h). | Sheet 3 (Cainiao × LCsize) |
+| 7 | Dig 2: + city size (PUNCHLINE) | For **big-city destinations on small carriers**, Cainiao is **3.3 h slower**. | Sheet 3 (2×2 grid, focus cell) |
+| 8 | Mechanism | The extra time is **line-haul**, not last-mile. | Sheet 4 (segments) |
+| 9 | Why (honest) | Small carriers pass through **fewer** cities — so it's per-leg transit, not more stops. | Sheet 5 |
 | 10 | So what | Three moves for Cainiao. | text |
 | 11 | Two-sentence summary | S1 + S2 (below). | text |
 

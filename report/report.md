@@ -2,7 +2,7 @@
 
 *When does Alibaba's logistics network stop delivering its speed advantage?*
 
-**BUAD 345: Decision Analytics and Visualization — Final Project (Summer 2026)**
+**Group 12 — BUAD 345: Decision Analytics and Visualization — Final Project (Summer 2026)**
 
 > Markdown mirror of `report.tex` / `report.pdf`. The PDF is the formal submission.
 
@@ -84,7 +84,7 @@ the magnitudes, not the qualitative punchline.
    destinations served by small carriers, with the bottleneck in line-haul
    rather than the last mile.
 
-[^1]: Replace with an assigned reference (e.g. Cainiao/Alizila item or an OM study on delivery speed and retention).
-[^2]: Replace with an assigned reference on Chinese logistics infrastructure / carrier line-haul economics.
-[^3]: Replace with an assigned reference on routing performance under heterogeneous carrier capability.
-[^4]: Replace with an assigned reference on pickup-point / locker effects.
+[^1]: Fisher, M. L., Gallino, S., & Xu, J. J. (2019). The value of rapid delivery in omnichannel retailing. *Journal of Marketing Research*, 56(5), 732–748; Rao, S., Griffis, S. E., & Goldsby, T. J. (2011). Failure to deliver? Linking online order fulfillment glitches with future purchase behavior. *Journal of Operations Management*, 29(7–8), 692–703.
+[^2]: Yu, Y., Wang, X., Zhong, R. Y., & Huang, G. Q. (2016). E-commerce logistics in supply chain management: Practice perspective. *Procedia CIRP*, 52, 179–185.
+[^3]: Koç, Ç., Bektaş, T., Jabali, O., & Laporte, G. (2016). Thirty years of heterogeneous vehicle routing. *European Journal of Operational Research*, 249(1), 1–21.
+[^4]: Deutsch, Y., & Golany, B. (2018). A parcel locker network as a solution to the logistics last mile problem. *International Journal of Production Research*, 56(1–2), 251–261.
