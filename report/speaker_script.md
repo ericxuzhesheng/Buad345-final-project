@@ -1,6 +1,7 @@
 # Speaker Script — Cainiao is Fast, But Not Everywhere
 
-**Group 12 · BUAD 345 · Defense talk (~9–10 minutes).**
+**Group 12 · Yingqi Tan · Hao Yang · Zhesheng Xu · BUAD 345 · Defense talk
+(~9–10 minutes).**
 One block per slide in `report/slides.pdf`. `[advance]` = move to the next slide.
 Numbers match `report/report.pdf` and the R output. The main visuals are built in
 **Tableau** (Cainiao = blue, non-Cainiao = orange); two composite **R dashboards**
@@ -9,9 +10,10 @@ pull each half of the story onto a single screen.
 ---
 
 ### Slide 1 — Title
-Good [morning/afternoon], everyone. We're Group 12, and our project asks a simple
-question with a not-so-simple answer: *Cainiao is fast — but is it fast
-everywhere?* We looked at 1.3 million Tmall orders from 2017 to find out. `[advance]`
+Good [morning/afternoon], everyone. We're Group 12: Yingqi Tan, Hao Yang, and
+Zhesheng Xu. Our project asks a simple question with a not-so-simple answer:
+*Cainiao is fast — but is it fast everywhere?* We looked at 1.3 million Tmall
+orders from 2017 to find out. `[advance]`
 
 ### Slide 2 — The question
 Our audience is Cainiao itself, Alibaba's logistics platform. Why care about
