@@ -1,11 +1,13 @@
 # Tableau Build Guide — Cainiao Fulfillment Story
 
-> **Shortcut:** a pre-built packaged workbook is included at
-> `tableau/Cainiao_Story.twbx` (data bundled — just double-click to open). It
-> contains three worksheets (Punchline 2×2, Hours-saved/reversal, Time segments)
-> and a dashboard. If a sheet needs polishing (colors, labels, the diverging
-> red/blue on the hours-saved bars), use the per-sheet steps below. Build it from
-> scratch with this guide if you prefer.
+> **Note on `Cainiao_Story.twbx`:** the auto-generated packaged workbook does **not
+> load** in Tableau Desktop (internal error `501CF476` — its worksheet internals
+> were hand-authored by a script). Build the workbook natively instead: the CSVs in
+> `../tableau_data/` are clean and tiny, so the per-sheet steps below take ~15 min
+> and produce real, polished visuals. For the five exact views the report and slides
+> need (and their export filenames), follow **`TABLEAU_EXPORT_CHECKLIST.md`**. After
+> building, `File ▸ Export Packaged Workbook` over `Cainiao_Story.twbx` to get a
+> working `.twbx`.
 
 
 This guide rebuilds the dashboards/story from the aggregate CSVs in

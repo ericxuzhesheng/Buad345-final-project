@@ -16,6 +16,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT, "tableau_data")
 OUT_TWBX = os.path.join(ROOT, "tableau", "Cainiao_Story.twbx")
 VERSION = "18.1"
+SOURCE_BUILD = "20214.24.1112.1227"  # a valid Tableau 2021.4 (v18.1) build string
 
 # Numeric columns -> measures; everything else -> string dimension.
 NUMERIC = {"n_orders", "avg_totaltime", "avg_review",
@@ -131,17 +132,19 @@ def worksheet_xml(name, ds_name, cols, row_cols, col_cols, color=None):
 
 
 def dashboard_xml(name, sheets):
+    # Every <zone> needs a unique id (Tableau schema requirement). Reserve id=1
+    # for the root container zone; child sheet zones start at 2.
     zones = ""
     for i, s in enumerate(sheets):
-        zones += (f"<zone h='{100000//len(sheets)}' name='{s}' w='98000' "
-                  f"x='1000' y='{1000 + i*(98000//len(sheets))}'/>")
+        zones += (f"<zone h='{100000//len(sheets)}' id='{i + 2}' name='{s}' "
+                  f"w='98000' x='1000' y='{1000 + i*(98000//len(sheets))}'/>")
     return f"""
   <dashboards>
     <dashboard name='{name}'>
       <style/>
       <size maxheight='2000' maxwidth='1600' minheight='2000' minwidth='1600'/>
       <zones>
-        <zone h='100000' w='100000' x='0' y='0'>{zones}</zone>
+        <zone h='100000' id='1' w='100000' x='0' y='0'>{zones}</zone>
       </zones>
     </dashboard>
   </dashboards>"""
@@ -175,8 +178,13 @@ def main():
     sheet_names = ["1. Cainiao is faster (2x2)", "2. Hours saved (reversal)",
                    "3. Time segments"]
 
+    # Tableau requires these on the root <workbook> element (source-build is
+    # explicitly validated; source-platform and the user namespace are expected
+    # by the loader). SOURCE_BUILD is a valid 18.1-series build string.
     twb = (f"<?xml version='1.0' encoding='utf-8' ?>\n"
-           f"<workbook version='{VERSION}'>\n"
+           f"<workbook source-build='{SOURCE_BUILD}' source-platform='win' "
+           f"version='{VERSION}' "
+           f"xmlns:user='http://www.tableausoftware.com/xml/user'>\n"
            f"  <datasources>{datasources}\n  </datasources>\n"
            f"  <worksheets>{''.join(sheets)}\n  </worksheets>\n"
            f"{dashboard_xml('Cainiao Story', sheet_names)}\n"

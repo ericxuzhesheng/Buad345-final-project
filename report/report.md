@@ -29,14 +29,14 @@ size → destination-city size → segment decomposition.
 
 **3.1 Overall, Cainiao is faster.** 61.9 h vs 71.0 h (~**9.2 h faster**; medians
 53.7 vs 66.3). It survives a fair-comparison control (orders with no promised
-window): 62.5 vs 71.0 h. *(Figure: `fig1_main_effect.png`)*
+window): 62.5 vs 71.0 h. *(Tableau: `tab_headline.png`)*
 
 **3.2 The advantage is uneven across carriers.** Cainiao's edge is larger on
 large carriers than on small ones.
 
 **3.3 Punchline — big-city destinations on small carriers.** Cainiao saves
 8–10.5 h in three of four cells, but for **big-city destinations on small
-carriers it is 3.3 h *slower*** than non-Cainiao. *(Figure: `fig2_punchline.png`)*
+carriers it is 3.3 h *slower*** than non-Cainiao. *(Tableau: `tab_punchline.png`)*
 
 | Destination | Carrier | Cainiao | Non-Cainiao | **Cainiao hours saved** |
 |---|---|--:|--:|--:|
@@ -46,14 +46,14 @@ carriers it is 3.3 h *slower*** than non-Cainiao. *(Figure: `fig2_punchline.png`
 | Small city | Small | 67.1 | 75.2 | **+8.0** |
 
 **Customer reviews echo it.** That cell is Cainiao's lowest logistics review
-(4.764) vs non-Cainiao's highest (4.860). *(Figure: `fig4_review.png`)*
+(4.764) vs non-Cainiao's highest (4.860). *(Tableau: `tab_reviews.png`)*
 
 ## 4. Mechanism: where does the time go?
 Decomposing into pre-delivery / line-haul / last-mile, the gap is in
 **line-haul (between-facility transit), not the last mile** (which is ~4–6 h and
 similar everywhere). Cainiao's usual edge is faster line-haul (e.g. 38.4 vs
 47.8 h on small-city/large-carrier orders); in the punchline cell that edge
-disappears (27.0 vs 26.9 h). *(Figure: `fig3_segments.png`)*
+disappears (27.0 vs 26.9 h). *(Tableau: `tab_segments.png`)*
 
 **Honest non-result.** Small carriers do **not** make more stops — they pass
 through slightly *fewer* cities (~2.9–3.1) than large ones (3.4–3.7). The penalty

@@ -116,9 +116,9 @@ is what licenses pooling the data for the cell-level comparisons that follow.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.82\textwidth]{fig5_daily_trend.png}
-\caption{Daily average fulfillment time by group; the Cainiao advantage is stable
-over time.}
+\includegraphics[width=0.82\textwidth]{tab_trend.png}
+\caption{Daily average fulfillment time by group (Tableau); the Cainiao advantage
+is stable over time.}
 \label{fig:trend}
 \end{figure}
 
@@ -153,8 +153,8 @@ Non-Cainiao    & 900{,}257 & 71.0 & --- \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{fig1_main_effect.png}
-\caption{Cainiao is faster overall.}
+\includegraphics[width=0.5\textwidth]{tab_headline.png}
+\caption{Cainiao is faster overall (Tableau).}
 \label{fig:main}
 \end{figure}
 
@@ -205,11 +205,20 @@ Small city & Small & 67.1 & 75.2 & \textbf{+8.0} & 311{,}798 \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{dash1_story.png}
-\caption{Decision dashboard: KPI strip, the 2$\times$2 fulfillment-time breakdown,
-and Cainiao's hours-saved per cell. The advantage nearly vanishes---and reverses
-(red)---for big-city destinations served by small carriers.}
+\includegraphics[width=\textwidth]{tab_punchline.png}
+\caption{Tableau: average fulfillment time by destination-city size $\times$ carrier
+size, split Cainiao vs.\ non-Cainiao. In three cells the Cainiao (blue) bar is
+shorter; in big-city/small-carrier the Cainiao bar is \emph{taller}---the reversal.}
 \label{fig:punch}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{dash1_story.png}
+\caption{Composite decision dashboard (R): the KPI strip, the 2$\times$2 breakdown, and
+Cainiao's hours-saved per cell in one view; the big-city/small-carrier cell is the
+only one where Cainiao saves negative hours ($-$3.3\,h, red).}
+\label{fig:dash1}
 \end{figure}
 
 \subsection{Customer reviews echo the punchline}
@@ -220,8 +229,8 @@ problem, not only an operational curiosity.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.78\textwidth]{fig4_review.png}
-\caption{Customer reviews mirror the speed punchline.}
+\includegraphics[width=0.78\textwidth]{tab_reviews.png}
+\caption{Customer reviews mirror the speed punchline (Tableau).}
 \label{fig:review}
 \end{figure}
 
@@ -268,11 +277,20 @@ Small city & Small, Non-Cainiao & 0.30 & 51.0 & 6.11 \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.95\textwidth]{dash2_mechanism.png}
-\caption{Segment decomposition. The between-facility line-haul leg dominates and
-is where Cainiao normally wins; that win evaporates for big-city/small-carrier
-orders (top-right panel).}
+\includegraphics[width=0.95\textwidth]{tab_segments.png}
+\caption{Segment decomposition (Tableau): stacked pre-delivery / line-haul / last-mile
+per cell and group. The line-haul leg dominates and is where Cainiao normally wins;
+that win evaporates for big-city/small-carrier orders.}
 \label{fig:seg}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{dash2_mechanism.png}
+\caption{Composite mechanism dashboard (R): per-segment averages faceted across the
+four cells. Last-mile is small and flat; the gap lives in line-haul, which stays high
+for big-city/small-carrier Cainiao orders.}
+\label{fig:dash2}
 \end{figure}
 
 \paragraph{An honest non-result.} A natural hypothesis---that small carriers make
@@ -395,13 +413,18 @@ supply chain management: Practice perspective. \emph{Procedia CIRP}, 52, 179--18
 %======================================================================
 \appendix
 \section{Reproduction}
-All numbers and figures are produced by the R pipeline in \texttt{R/} (run
-\texttt{Rscript R/run\_all.R} from the repository root): \texttt{01} builds the
-order-level table from the three CSVs, \texttt{02} exports the aggregate tables in
-\texttt{tableau\_data/} and prints the exact numbers used above, and \texttt{03}
-renders the figures. The interactive dashboards are rebuilt from those aggregates
-following \texttt{tableau/TABLEAU\_BUILD\_GUIDE.md}. Raw data are not redistributed
-(non-public dataset; 969\,MB logistics file).
+The analysis and the visualization are split across two tools. \textbf{R} is the
+data engine: run \texttt{Rscript R/run\_all.R} from the repository root, where
+\texttt{01} builds the order-level table from the three CSVs and \texttt{02}
+exports the aggregate tables in \texttt{tableau\_data/} and prints the exact
+numbers used above. \textbf{Tableau} is the visualization layer: every figure and
+dashboard in this report is built in Tableau from those aggregates---open the
+packaged workbook \texttt{tableau/Cainiao\_Story.twbx} (data bundled) or rebuild
+each sheet via \texttt{tableau/TABLEAU\_BUILD\_GUIDE.md}, then export the views to
+\texttt{figures/tab\_*.png} as listed in
+\texttt{tableau/TABLEAU\_EXPORT\_CHECKLIST.md}. (The R scripts \texttt{03}--\texttt{04}
+also render equivalent static figures as an optional cross-check.) Raw data are not
+redistributed (non-public dataset; 969\,MB logistics file).
 
 \bigskip
 \noindent\textbf{Repository:} \url{https://github.com/ericxuzhesheng/Buad345-final-project}

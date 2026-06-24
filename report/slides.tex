@@ -34,7 +34,7 @@
   \end{itemize}
   \vfill
   \footnotesize Data: 1.29M Tmall orders, Jan--Jul 2017 (order + 969\,MB logistics
-  + merchant files).
+  + merchant files). Analysis in R; all visualizations built in Tableau.
 \end{frame}
 
 % 2
@@ -65,7 +65,7 @@
     \end{column}
     \begin{column}{0.46\textwidth}
       \centering
-      \includegraphics[width=\textwidth]{fig1_main_effect.png}
+      \includegraphics[width=\textwidth]{tab_headline.png}
     \end{column}
   \end{columns}
 \end{frame}
@@ -73,13 +73,24 @@
 % 4
 \begin{frame}{Stable over time}
   \centering
-  \includegraphics[width=0.86\textwidth]{fig5_daily_trend.png}
+  \includegraphics[width=0.86\textwidth]{tab_trend.png}
 \end{frame}
 
 % 5 -- dashboard centerpiece
 \begin{frame}{...BUT the advantage is uneven --- the punchline}
   \centering
-  \includegraphics[width=0.96\textwidth]{dash1_story.png}
+  \includegraphics[width=0.96\textwidth]{tab_punchline.png}
+
+  \footnotesize Tableau decision dashboard --- big-city\,$\times$\,small-carrier
+  cell highlighted in red.
+\end{frame}
+
+% 5b -- composite decision dashboard (R)
+\begin{frame}{The whole story on one screen}
+  \centering
+  \includegraphics[height=0.82\textheight]{dash1_story.png}
+
+  {\footnotesize KPI strip $+$ 2$\times$2 breakdown $+$ hours-saved (reversal $-$3.3\,h in red).}
 \end{frame}
 
 % 6
@@ -102,7 +113,7 @@
 % 7
 \begin{frame}{Customers feel it too}
   \centering
-  \includegraphics[width=0.8\textwidth]{fig4_review.png}
+  \includegraphics[width=0.8\textwidth]{tab_reviews.png}
 
   \footnotesize Cainiao's \emph{lowest} review (4.764) is the same big-city /
   small-carrier cell; non-Cainiao's \emph{highest} (4.860) is right beside it.
@@ -121,9 +132,15 @@
     \end{column}
     \begin{column}{0.5\textwidth}
       \centering
-      \includegraphics[width=\textwidth]{dash2_mechanism.png}
+      \includegraphics[width=\textwidth]{tab_segments.png}
     \end{column}
   \end{columns}
+\end{frame}
+
+% 8b -- composite mechanism dashboard (R)
+\begin{frame}{Mechanism, faceted: last-mile is flat, line-haul carries the gap}
+  \centering
+  \includegraphics[height=0.82\textheight]{dash2_mechanism.png}
 \end{frame}
 
 % 9
