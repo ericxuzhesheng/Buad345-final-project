@@ -115,10 +115,12 @@ fulfillment time over the whole Jan--Jul 2017 window (Figure~\ref{fig:trend})
 shows Cainiao orders running consistently below non-Cainiao orders across the
 entire period, including the volume-heavy spring months. This temporal stability
 is what licenses pooling the data for the cell-level comparisons that follow.
+The Tableau view plots the daily group mean: blue represents Cainiao and orange
+represents non-Cainiao.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.82\textwidth]{tab_trend.png}
+\includegraphics[width=0.82\textwidth,trim=0 32 0 0,clip]{tab_trend.png}
 \caption{Daily average fulfillment time by group (Tableau); the Cainiao advantage
 is stable over time.}
 \label{fig:trend}
@@ -133,7 +135,8 @@ Cainiao orders are fulfilled in \textbf{61.9\,h} on average versus
 Cainiao might simply handle orders with no tight promise. Restricting to orders
 with \emph{no} promised-speed window (\texttt{promise}\,$=0$) leaves the gap
 essentially unchanged (62.5 vs.\ 71.0\,h), so the advantage is not an artifact of
-promise mix (Table~\ref{tab:l1}).
+promise mix (Table~\ref{tab:l1}). In the Tableau comparison, bar height is mean
+fulfillment time; blue is Cainiao and orange is non-Cainiao.
 
 \begin{table}[h]
 \centering\small
@@ -155,7 +158,7 @@ Non-Cainiao    & 900{,}257 & 71.0 & --- \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{tab_headline.png}
+\includegraphics[width=0.5\textwidth,trim=0 32 0 0,clip]{tab_headline.png}
 \caption{Cainiao is faster overall (Tableau).}
 \label{fig:main}
 \end{figure}
@@ -187,7 +190,9 @@ Adding destination-city size exposes the real story (Table~\ref{tab:cells},
 Figure~\ref{fig:punch}). Cainiao saves 8--10.5 hours in three of the four cells---
 but in \textbf{big-city destinations handled by small carriers, Cainiao is
 3.3 hours \emph{slower}} than non-Cainiao. The cell is not thin: it contains
-22{,}756 orders, so the reversal is not a small-sample fluke.
+22{,}756 orders, so the reversal is not a small-sample fluke. The Tableau bars
+show mean fulfillment hours within each destination-size/carrier-size cell, with
+blue for Cainiao and orange for non-Cainiao.
 
 \begin{table}[h]
 \centering\small
@@ -207,7 +212,7 @@ Small city & Small & 67.1 & 75.2 & \textbf{+8.0} & 311{,}798 \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{tab_punchline.png}
+\includegraphics[width=\textwidth,trim=0 32 0 0,clip]{tab_punchline.png}
 \caption{Tableau: average fulfillment time by destination-city size $\times$ carrier
 size, split Cainiao vs.\ non-Cainiao. In three cells the Cainiao (blue) bar is
 shorter; in big-city/small-carrier the Cainiao bar is \emph{taller}---the reversal.}
@@ -227,11 +232,12 @@ only one where Cainiao saves negative hours ($-$3.3\,h, red).}
 The same cell is Cainiao's weakest on logistics review score: 4.764 for Cainiao---
 its lowest of any cell---versus 4.860 for non-Cainiao, the highest of any cell
 (Figure~\ref{fig:review}). Customers feel the slowdown, so this is an experience
-problem, not only an operational curiosity.
+problem, not only an operational curiosity. The Tableau view reports the mean
+review score in each cell; blue denotes Cainiao and orange denotes non-Cainiao.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.78\textwidth]{tab_reviews.png}
+\includegraphics[width=0.78\textwidth,trim=0 32 0 0,clip]{tab_reviews.png}
 \caption{Customer reviews mirror the speed punchline (Tableau).}
 \label{fig:review}
 \end{figure}
@@ -257,7 +263,8 @@ lives. Cainiao's usual edge comes from much faster between-facility line-haul
 (e.g.\ 38.4 vs.\ 47.8\,h on small-city/large-carrier orders). In the punchline
 cell that edge disappears: Cainiao line-haul is 27.0\,h versus non-Cainiao 26.9\,h,
 essentially tied---so the lost overall advantage is a lost \emph{line-haul}
-advantage.
+advantage. In the Tableau stacked bars, red is pre-delivery, orange is line-haul,
+and blue is last-mile; each segment height is the mean hours for that cell.
 
 \begin{table}[h]
 \centering\small
@@ -279,7 +286,7 @@ Small city & Small, Non-Cainiao & 0.30 & 51.0 & 6.11 \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.95\textwidth]{tab_segments.png}
+\includegraphics[width=0.95\textwidth,trim=0 32 0 0,clip]{tab_segments.png}
 \caption{Segment decomposition (Tableau): stacked pre-delivery / line-haul / last-mile
 per cell and group. The line-haul leg dominates and is where Cainiao normally wins;
 that win evaporates for big-city/small-carrier orders.}
@@ -411,24 +418,5 @@ Operations Management}, 29(7--8), 692--703.
 Yu, Y., Wang, X., Zhong, R. Y., \& Huang, G. Q. (2016). E-commerce logistics in
 supply chain management: Practice perspective. \emph{Procedia CIRP}, 52, 179--185.
 \end{thebibliography}
-
-%======================================================================
-\appendix
-\section{Reproduction}
-The analysis and the visualization are split across two tools. \textbf{R} is the
-data engine: run \texttt{Rscript R/run\_all.R} from the repository root, where
-\texttt{01} builds the order-level table from the three CSVs and \texttt{02}
-exports the aggregate tables in \texttt{tableau\_data/} and prints the exact
-numbers used above. \textbf{Tableau} is the visualization layer: every figure and
-dashboard in this report is built in Tableau from those aggregates---open the
-packaged workbook \texttt{tableau/Cainiao\_Story.twbx} (data bundled) or rebuild
-each sheet via \texttt{tableau/TABLEAU\_BUILD\_GUIDE.md}, then export the views to
-\texttt{figures/tab\_*.png} as listed in
-\texttt{tableau/TABLEAU\_EXPORT\_CHECKLIST.md}. (The R scripts \texttt{03}--\texttt{04}
-also render equivalent static figures as an optional cross-check.) Raw data are not
-redistributed (non-public dataset; 969\,MB logistics file).
-
-\bigskip
-\noindent\textbf{Repository:} \url{https://github.com/ericxuzhesheng/Buad345-final-project}
 
 \end{document}
