@@ -2,7 +2,9 @@
 
 *When does Alibaba's logistics network stop delivering its speed advantage?*
 
-**Group 12 — BUAD 345: Decision Analytics and Visualization — Final Project (Summer 2026)**
+**Group 12 — Yingqi Tan · Hao Yang · Zhesheng Xu**
+
+**BUAD 345: Decision Analytics and Visualization — Final Project (Summer 2026)**
 
 > Markdown mirror of `report.tex` / `report.pdf`. The PDF is the formal submission.
 
