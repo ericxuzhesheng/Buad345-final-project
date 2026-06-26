@@ -67,8 +67,8 @@ small carrier: minus 3.3 hours. And this isn't a tiny corner of the data — tha
 cell has almost 23,000 orders. It's a real, reliable reversal. `[advance]`
 
 ### Slide 9 — Customers feel it
-And customers notice. This is the logistics review score, and I've zoomed the axis
-in so you can see the gaps. That same big-city, small-carrier cell is Cainiao's
+And customers notice. This is the logistics review score on the full 0-to-5 scale.
+That same big-city, small-carrier cell is Cainiao's
 *lowest* score anywhere — 4.76 — while the non-Cainiao option right next to it is
 the *highest* — 4.86. So this isn't just an operations curiosity; it's hurting the
 customer experience exactly where Cainiao underperforms. `[advance]`

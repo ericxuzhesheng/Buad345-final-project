@@ -41,7 +41,7 @@ p4 <- ggplot(rv, aes(LCsize, avg_review, fill = cainiao)) +
   geom_text(aes(label = sprintf("%.3f", avg_review)),
             position = position_dodge(width = 0.7), vjust = -0.3, size = 2.8) +
   facet_wrap(~ Citysize) +
-  coord_cartesian(ylim = c(4.7, 4.9)) +
+  coord_cartesian(ylim = c(0, 5)) +
   scale_fill_manual(values = c("Cainiao" = accent, "Non-Cainiao" = grey)) +
   labs(title = "Customer reviews echo it: Cainiao's lowest score is Big-city x Small carrier",
        x = "Carrier size", y = "Avg logistics review", fill = NULL) +

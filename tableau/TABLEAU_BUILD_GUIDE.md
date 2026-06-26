@@ -100,7 +100,8 @@ aggregated, so no joins are needed):
   small carriers route through more cities (a plausible mechanism for the delay).
 - **Review companion:** new sheet on `agg_review_by_group.csv`, Rows
   `avg_review`, Columns `Citysize`/`LCsize`, Color `cainiao` — check whether
-  the customer experience echoes the speed story.
+  the customer experience echoes the speed story. Fix the review y-axis from 0
+  to 5 and keep all visible worksheet/export text English-only.
 
 ## (Optional) Sheet 6 — Daily trend
 

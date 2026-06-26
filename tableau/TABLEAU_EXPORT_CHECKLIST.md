@@ -61,7 +61,8 @@ aggregate CSVs in `../tableau_data/` and exports it to the matching filename.
 
 - **Data:** `agg_review_by_group.csv`  (cols: `Citysize, LCsize, cainiao, avg_review, n_reviews`)
 - **Columns:** `Citysize` then `LCsize`   **Rows:** `AVG(avg_review)`   **Color:** `cainiao`.
-- **Label:** `avg_review`. Truncate axis to ~4.7–4.9 so the gaps are visible.
+- **Label:** `avg_review`. Fix the y-axis from 0 to 5; do not truncate the axis.
+- Keep worksheet titles, labels, legends, captions, and export footers English-only.
 - The BigCity×Small Cainiao bar (4.764) is the lowest; non-Cainiao beside it (4.860) the highest.
 - Export → `figures/tab_reviews.png`  (min width ~1200 px).
 
